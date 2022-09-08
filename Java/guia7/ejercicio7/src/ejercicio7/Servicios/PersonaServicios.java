@@ -20,9 +20,8 @@ public class PersonaServicios {
 
         System.out.println("Ingrese el sexo de la persona (H- hombre , M- mujer, O- otro)");
         dat.setSexo(leer.next().toUpperCase());
-
         
-        while (!(dat.getSexo().equals("M")) || (dat.getSexo().equals("H")) || (dat.getSexo().equals("O"))) {
+        while (!(dat.getSexo().equalsIgnoreCase("M")) && (dat.getSexo().equalsIgnoreCase("H")) && (dat.getSexo().equalsIgnoreCase("O"))) {
             System.out.println("ERROR! El sexo debe espicificarse como H para hombre, M para mujer u O para otro");
             System.out.println("Por favor ingrese el sexo nuevamente.");
             dat.setSexo(leer.next());
@@ -37,30 +36,27 @@ public class PersonaServicios {
         return dat;
     }
 
-    public void calcularIMC(Persona dat) {
+    public int calcularIMC(Persona dat) {
 
         Double imc = dat.getPeso() / (pow(dat.getAltura(), 2));
-
+        int imcResult=0;
         if (imc < 20) {
-            System.out.println("IMC = 1");
+            imcResult = -1;
         } else if (imc >= 20 && imc <= 25) {
-            System.out.println("IMC = 0");
+            imcResult = 0;
         } else if (imc > 25) {
-            System.out.println("IMC = -1");
+            imcResult = 1;
         }
-
+        return imcResult;
     }
 
     public boolean esMayorDeEdad(Persona dat) {
-
        
         boolean mayor = false;
 
-        if (dat.getEdad() >= 18) {
+        if (dat.getEdad() > 17) {
             mayor = true;
         }
         return mayor;
     }
-    
-
 }

@@ -37,47 +37,18 @@ public class Ejercicio7 {
 
     public static void main(String[] args) {
 
-        PersonaServicios p1 = new PersonaServicios();
-
-        Persona dat1 = p1.crearPersona();
-        Persona dat2 = p1.crearPersona();
-        Persona dat3 = p1.crearPersona();
-        Persona dat4 = p1.crearPersona();
-
-        System.out.println("\n");
-        p1.calcularIMC(dat1);
-
-        if (p1.esMayorDeEdad(dat1) == true) {
-            System.out.println("La persona es mayor de edad");
-        } else {
-            System.out.println("La persona es menor de edad");
+        int n = 1;
+        PersonaServicios serv = new PersonaServicios();
+        Persona[] p = new Persona[n];
+        
+        for (int i = 0; i < n; i++) {
+            p[i] = new Persona();
+            serv.crearPersona();
         }
 
-        System.out.println("\n");
-        p1.calcularIMC(dat1);
-
-        if (p1.esMayorDeEdad(dat1) == true) {
-            System.out.println("La persona es mayor de edad");
-        } else {
-            System.out.println("La persona es menor de edad");
-        }
-
-        System.out.println("\n");
-        p1.calcularIMC(dat1);
-
-        if (p1.esMayorDeEdad(dat1) == true) {
-            System.out.println("La persona es mayor de edad");
-        } else {
-            System.out.println("La persona es menor de edad");
-        }
-
-        System.out.println("\n");
-        p1.calcularIMC(dat1);
-
-        if (p1.esMayorDeEdad(dat4) == true) {
-            System.out.println("La persona es mayor de edad");
-        } else {
-            System.out.println("La persona es menor de edad");
+        for (int i = 0; i < n; i++) {
+            p[i]= new Persona();
+            System.out.println(serv.calcularIMC(p[i]));
         }
 
     }

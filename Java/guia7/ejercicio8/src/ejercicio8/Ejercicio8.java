@@ -43,6 +43,7 @@ public class Ejercicio8 {
         dat.unirFrases(obj);
         dat.reemplazar(obj);
         dat.contiene(obj);
+        
 
     }
 
